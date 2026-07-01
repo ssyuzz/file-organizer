@@ -4,4 +4,5 @@
 
 int cliParser(int argc, char *argv[]);
 
+void getTime(char name[], long long int time);
 #endif
