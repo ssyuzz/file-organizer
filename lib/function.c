@@ -25,10 +25,12 @@ void getAllFiles()
     do{
         if(fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
         {
+            printA("[D] ");
             printA(fd.cFileName);
             printA("\n");
         }
         else{
+            printA("[F] ");
             printA(fd.cFileName);
             printA(" : ");
             printUi(fd.nFileSizeLow);
