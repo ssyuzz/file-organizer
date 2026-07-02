@@ -6,10 +6,18 @@
 void printHelp()
 {
     printf("==== Help & Documentation ====\n");
-    printf("1. Help : -h\n");
-    
+    printf("1. Help : \t\t\t-h\n");
+    printf("2. Retrieve all Files : \t-l\n");
 }
 void printA(char text[])
 {
-    printf("%s\n", text);
+    printf(text);
+}
+void printI(int num)
+{
+    printf("%d", &num);
+}
+void printUi(long unsigned int num)
+{
+    printf("%lu", num);
 }

@@ -24,9 +24,9 @@ int cliParser(int argc, char *argv[])
             createDir(dirName);
             active = 1;
         }
-        else if(strcmp(argv[i], "-d") == 0)
+        else if(strcmp(argv[i], "-l") == 0)
         {
-            
+            getAllFiles();
         }
         
     }

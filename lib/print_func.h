@@ -4,4 +4,6 @@
 
 void printHelp();
 void printA(char text[]);
+void printI(int num);
+void printUi(long unsigned int num);
 #endif
