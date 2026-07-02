@@ -2,6 +2,7 @@
 #include "print_func.h"
 #include "function.h"
 #include <string.h>
+
 int cliParser(int argc, char *argv[])
 {
     if(argc == 1)
@@ -20,8 +21,17 @@ int cliParser(int argc, char *argv[])
         {
             char dirName[1024];
             strcpy(dirName, argv[i+1]);
-            printA("Ini");
-            createDir(dirName);
+            int check = checkIfDirExist(dirName);
+            if(check == 0)
+            {
+                createDir(dirName);
+                return moveFiles(dirName, argv[i+1]);
+                
+            }
+            else
+            {
+                return moveFiles(dirName, argv[i+1]);
+            }
             active = 1;
         }
         else if(strcmp(argv[i], "-l") == 0)
@@ -31,4 +41,28 @@ int cliParser(int argc, char *argv[])
         
     }
  
+}
+void copyStr(char dest[], char source[])
+{
+    strcpy(dest, source);
+}
+
+int str_comp(char text1[], char text2[])
+{
+    return strcmp(text1, text2);
+}
+int getEx(char fileName[], char ex[])
+{
+    char *str = strrchr(fileName, '.');
+    
+    if(str == NULL)
+        return 0;
+    printA(str);
+    
+    if(strcmp(str, ex) == 0)
+    {
+        return 1;
+    }
+    return 0;
+    
 }

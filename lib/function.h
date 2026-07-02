@@ -4,4 +4,6 @@
 
 int createDir(char name[]);
 void getAllFiles();
+int checkIfDirExist(char dirName[]);
+int moveFiles(char dirName[], char extension[]);
 #endif
